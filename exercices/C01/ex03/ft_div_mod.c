@@ -24,18 +24,22 @@ void ft_putnbr(int nb){
     }
 }
 
-void ft_swap(int *a, int *b){
-    int c = *b;
-    *b = *a;
-    *a = c;
-    ft_putnbr(*a);
-    write(1, " ", 1);
-    ft_putnbr(*b);
+void ft_div_mod(int *a, int *b, int *div, int *mod){
+    *div = *a / *b;
+    *mod = *a%*b;
 }
 
 int main(){
-    int a = 42;
-    int b = 21;
-    ft_swap(&a, &b);
+    int a = 10;
+    int b = 3;
+    int div, mod;
+    ft_div_mod(&a, &b, &div, &mod);
+    ft_putnbr(a);
+    ft_putchar(' ');
+    ft_putnbr(b);
+    ft_putchar(' ');
+    ft_putnbr(div);
+    ft_putchar(' ');
+    ft_putnbr(mod);
     return 0;
 }
